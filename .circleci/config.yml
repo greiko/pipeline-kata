@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: gradle:latest
+    steps:
+      - checkout
+      - run:
+          name: "Run build command"
+          command: "gradle build"
+
+workflows:
+  build-workflow:
+    jobs:
+      - build
